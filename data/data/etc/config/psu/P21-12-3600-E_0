@@ -1,0 +1,18 @@
+[common]
+name = "P21"
+has_pin = 0
+has_iin = 0
+has_iout = 1
+voltage_min = 1000
+voltage_limit = 1400
+voltage_max = 1450
+voltage_step = 1
+voltage_boot = 1300
+voltage_boot_high = 1400 
+power_limit = 3550
+power_max = 3750
+iout_limit = 327.0
+iout_max = 333.0
+iin_limit = 16.8
+iin_max = 17.6
+efficiency = 0.93

@@ -1,0 +1,15 @@
+
+config permissions 'default'
+	option super_name 'super'
+	option super_pwd '1B3231655CEBB7A1F783EDDF27D254CA'
+	option super_perm '255'
+	option user1_name 'user1'
+	option user1_pwd '24C9E15E52AFC47C225B757E7BEE1F9D'
+	option user1_perm '0'
+	option user2_name 'user2'
+	option user2_pwd '7E58D63B60197CEB55A1C487989A3720'
+	option user2_perm '0'
+	option user3_name 'user3'
+	option user3_pwd '92877AF70A45FD6A2ED7FE81E1236B78'
+	option user3_perm '0'
+

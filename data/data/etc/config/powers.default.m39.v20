@@ -1,0 +1,37 @@
+[common]
+
+board_temp_protect = 75
+
+[power_DCDC]
+voltage_boot = 15
+voltage_boot_high = 13
+config = "config"
+
+;xxx = "freq voltage_target voltage_limit board_temp chip_temp ok_pct min_power"
+[config]
+
+bin1v1_J  =  "640 30 0 87 70 98 0"
+bin2v1_E  =  "644 32 0 87 72 98 0"
+bin2v1_F  =  "630 34 0 87 72 98 0"
+bin3v1_D  =  "644 29 0 87 70 98 0"
+bin3v1_E  =  "630 31 0 87 72 98 0"
+bin4v1_C  =  "650 28 0 87 72 98 0"
+bin5v1_C  =  "650 27 0 87 70 98 0"
+bin6v1_C =   "630 24 0 87 72 98 0"
+
+bin1 =      "640 30 0 95 70 99 0"
+bin2 =      "630 30 0 95 72 99 0"
+bin3 =      "630 30 0 95 72 99 0"
+bin4 =      "650 30 0 95 70 99 0"
+bin5 =      "645 30 0 95 70 99 0"
+bin6 =      "630 30 0 95 72 99 0"
+
+bin9 =      "630 30 0 95 70 99 0"
+bin10 =     "630 30 0 95 70 99 0"
+bin11 =     "630 30 0 95 70 99 0"
+bin12 =     "630 30 0 95 70 99 0"
+bin13 =     "630 30 0 95 70 99 0"
+bin14 =     "630 30 0 95 70 99 0"
+bin15 =     "630 30 0 95 70 99 0"
+bin16 =     "630 30 0 95 70 99 0"
+bin17 =     "630 30 0 95 70 99 0"

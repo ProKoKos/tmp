@@ -1,0 +1,12 @@
+#!/bin/sh
+password=$1
+newpwd=$2
+salt=$(cat /etc/shadow|grep admin|cut -f 2 -d ":"|cut -f 3 -d '$')
+hashed=$(cat /etc/shadow|grep admin|cut -f 2 -d ":"|cut -f 4 -d '$')
+pwdhash=$(openssl passwd -1 -salt ${salt} ${password} |cut -f 2 -d ":" |cut -f 4 -d '$')
+if [ "${pwdhash}" == "${hashed}" ];then
+    echo -e "${newpwd}\n${newpwd}" | passwd admin
+    echo -ne "success" > /tmp/pwdsuccess
+else
+    echo -ne "fail" > /tmp/pwdsuccess
+fi

@@ -1,0 +1,19 @@
+
+config btminer 'default'
+	option miner_type 'M53S++VK30'
+	option chip_id '0x1978'
+	option cool_mode '3'
+	option baud_rate	'12000000'
+	option board_num	'4'
+	option slot_link    "0:1 2:3"
+	option chip_num	    '240'
+	option chip_column_num '4'
+	option temp_slot1_map '0'
+	option temp_slot3_map '2'
+	option eeprom_slot1_map '0'
+	option eeprom_slot3_map '2'
+	option cool_temp     '30'
+	option pre_heat_temp '25'
+	option pre_heat_end_freq '210'
+	option pre_heat_timeout '300'
+

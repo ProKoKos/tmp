@@ -1,0 +1,8 @@
+[user]
+name = 'user2'
+passwd = 'user2'
+level = '0'
+opreator = 'tool'
+[command]
+update_pwd = 'on'
+update_firmware = 'on'

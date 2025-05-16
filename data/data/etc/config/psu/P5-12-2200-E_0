@@ -1,0 +1,18 @@
+[common]
+name = "P5"
+has_pin = 0
+has_iin = 0
+has_iout = 0
+voltage_min = 255
+voltage_limit = 0
+voltage_max = 0
+voltage_step = -1
+voltage_boot = 10
+voltage_boot_high = 0 
+power_limit = 0
+power_max = 0
+iout_limit = 0
+iout_max = 0.0
+iin_limit = 0.0
+iin_max = 0.0
+efficiency = 0.93

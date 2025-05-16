@@ -1,0 +1,28 @@
+
+config system
+	option ttylogin '0'
+	option log_proto 'udp'
+	option 'conloglevel' '1'
+	option 'kconloglevel' '1'
+	option cronloglevel '8'
+	option log_size 4096
+	option hostname 'WhatsMiner'
+	option zonename 'Asia/Shanghai'
+	option timezone 'CST-8'
+
+config timeserver 'ntp'
+	option enabled '1'
+	list server '0.cn.pool.ntp.org'
+	list server '0.openwrt.pool.ntp.org'
+	list server '0.asia.pool.ntp.org'
+	list server '0.pool.ntp.org'
+
+config firmware 'chip_ids'
+	option support_chip_id0 '0x1930'
+	option support_chip_id1 '0x1950'
+	option support_chip_id2 '0x1958'
+	option support_chip_id3 '0x1960'
+	option support_chip_id4 '0x1968'
+	option support_chip_id5 '0x1970'
+	option support_chip_id6 '0x1973'
+	option support_chip_id7 '0x1978'

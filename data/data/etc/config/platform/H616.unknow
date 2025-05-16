@@ -1,0 +1,43 @@
+[common]
+platform = "H616"
+name = "unknow"
+version = 0
+has_env_temp = 0
+has_env_humidity = 0
+
+[gpio]
+led_red = 257
+led_green = 258
+key_ip = 234
+key_reset = 233
+watchdog_feed = -1
+io_power_en = -1
+
+[gpio_board3]
+board_plug0 = -1
+board_plug1 = -1
+board_plug2 = -1
+board_plug3 = -1
+board_reset0 = -1
+board_reset1 = -1
+board_reset2 = -1
+board_reset3 = -1
+board_reset_detect0 = -1
+board_reset_detect1 = -1
+board_reset_detect2 = -1
+board_reset_detect3 = -1
+
+[gpio_board4]
+board_plug0 = -1
+board_plug1 = -1
+board_plug2 = -1
+board_plug3 = -1
+board_reset0 = -1
+board_reset1 = -1
+board_reset2 = -1
+board_reset3 = -1
+board_reset_detect0 = -1
+board_reset_detect1 = -1
+board_reset_detect2 = -1
+board_reset_detect3 = -1
+

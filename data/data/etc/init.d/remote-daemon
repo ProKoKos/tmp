@@ -1,0 +1,32 @@
+#!/bin/sh /etc/rc.common
+
+source /usr/bin/utils.sh
+
+START=90
+
+APP=remote-daemon
+PIDFILE=/var/run/$APP.pid
+
+ERROR_CODE=802
+
+start() {
+    verify_checksum $APP
+    if [ $? = 1 ]; then
+        remove_error_code $ERROR_CODE
+    else
+        generate_error_code $APP $ERROR_CODE "checksum error"
+    fi
+    start-stop-daemon -S -x $APP -p $PIDFILE -m -b
+}
+
+stop() {
+    if pidof $APP > /dev/null; then
+        killall -9 $APP > /dev/null
+        rm -rf $PIDFILE
+    fi
+}
+
+restart() {
+    stop
+    start
+}

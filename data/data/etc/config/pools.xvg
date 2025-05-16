@@ -1,0 +1,7 @@
+
+config pools 'default'
+	option coin_type 'XVG'
+	option pool1user 'DMmUFWv3axEFQsnocNMdd4BgVERraRgmPB'
+	option pool1pw '1234'
+	option pool1url 'stratum+tcp://xvg-blake2s.f2pool.com:9008'
+

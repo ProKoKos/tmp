@@ -1,0 +1,20 @@
+[common]
+name = "P463B"
+has_pin = 1
+has_iin = 1
+has_iout = 1
+phases = 3
+voltage_min = 2000
+voltage_limit = 3100
+voltage_max = 3100
+voltage_step = 2
+voltage_boot = 2600
+voltage_boot_high = 2800 
+power_limit = 5700
+power_limit_hp = 8000
+power_max = 8400
+iout_limit = 305.0
+iout_max = 320.0
+iin_limit = 16
+iin_max = 16.8
+efficiency = 0.96

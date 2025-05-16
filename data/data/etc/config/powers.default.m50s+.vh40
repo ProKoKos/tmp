@@ -1,0 +1,23 @@
+[common]
+version = 2
+board_temp_protect = 83
+
+[power_PXX2X]
+config = "config"
+
+;xxx = "freq voltage_target voltage_limit chip_temp board_temp"
+[config]
+bin1v1_A  =  "45.4 1330 72 97 0000 24.8"
+bin1v1_C  =  "45.4 1330 72 97 0000 24.8"
+bin1v1_E  =  "45.4 1330 72 97 0000 24.8"
+
+bin2v1_A  =  "45.4 1340 72 97 0000 24.8"
+bin2v1_C  =  "45.4 1340 72 97 0000 24.8"
+bin2v1_E  =  "45.4 1340 72 97 0000 24.8"
+
+
+bin1      =  "45.4 1300 72 97 0000 24.8"
+bin2      =  "45.4 1300 72 97 0000 24.8"
+bin3      =  "45.4 1300 72 97 0000 24.8"
+bin4      =  "45.4 1300 72 97 0000 24.8"
+

@@ -1,0 +1,36 @@
+[common]
+version = 2
+chip_temp_protect = 120
+board_temp_protect = 80
+board_temp_overheat = 85
+ft_chip_temp_warn = 110
+hp_ft_chip_temp_warn = 110
+
+[power_PXX3X]
+config = "config"
+
+;xxx = "freq voltage_target voltage_limit chip_temp board_temp"
+[config]
+bin1 =  "55 2950 72 97 0000 29.2"
+bin2 =  "55 2950 72 97 0000 29.2"
+bin3 =  "55 2950 72 97 0000 29.2"
+bin4 =  "55 2950 72 97 0000 29.2"
+bin5 =  "55 2950 72 97 0000 29.2"
+bin6 =  "55 2950 72 97 0000 29.2"
+bin9 =  "55 2950 72 97 0000 29.2"
+
+hp_bin1 =  "65 3100 72 97 0000 35.0"
+hp_bin2 =  "65 3100 72 97 0000 35.0"
+hp_bin3 =  "65 3100 72 97 0000 35.0"
+hp_bin4 =  "65 3100 72 97 0000 35.0"
+hp_bin5 =  "65 3100 72 97 0000 35.0"
+hp_bin6 =  "65 3100 72 97 0000 35.0"
+hp_bin9 =  "65 3100 72 97 0000 35.0"
+
+lp_bin1 =  "45 2800 72 97 0000 26.2"
+lp_bin2 =  "45 2800 72 97 0000 26.2"
+lp_bin3 =  "45 2800 72 97 0000 26.2"
+lp_bin4 =  "45 2800 72 97 0000 26.2"
+lp_bin5 =  "45 2800 72 97 0000 26.2"
+lp_bin6 =  "45 2800 72 97 0000 26.2"
+lp_bin9 =  "45 2800 72 97 0000 26.2"

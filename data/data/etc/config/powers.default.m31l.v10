@@ -1,0 +1,62 @@
+[common]
+chip_temp_protect = 110
+board_temp_protect = 75
+board_temp_overheat = 80
+
+[power_P21]
+power_limit = 3500
+voltage_boot = 1400
+config = "config"
+
+[power_P21G]
+power_limit = 3550
+voltage_boot = 1400
+config = "config"
+
+[power_P21D]
+power_limit = 3600
+voltage_boot = 1400
+config = "config"
+
+[power_PXX1X]
+config = "config"
+
+[power_PXX1X]
+power_limit = 3600
+voltage_boot = 1300
+voltage_boot_high = 1350
+config = "config"
+
+;xxx = "freq voltage_target voltage_limit chip_temp board_temp"
+[config]
+bin1 =  "686 1300 1400 87 50 97 0"
+bin2 =  "686 1300 1400 87 50 97 0"
+bin3 =  "686 1300 1400 87 50 97 0"
+bin4 =  "686 1300 1400 87 50 97 0"
+bin5 =  "686 1300 1400 87 50 97 0"
+bin6 =  "686 1300 1400 87 50 97 0"
+bin9 =  "686 1330 1400 87 50 97 0"
+bin10 = "686 1330 1400 87 50 97 0"
+bin11 = "686 1330 1400 87 50 97 0"
+bin12 = "686 1360 1400 87 50 97 0"
+bin13 = "686 1360 1400 87 50 97 0"
+bin14 = "686 1360 1400 87 50 97 0"
+bin15 = "686 1360 1400 87 50 97 0"
+bin16 = "686 1360 1400 87 50 97 0"
+bin17 = "686 1360 1400 87 50 97 0"
+
+lp_bin1 =  "686 1300 1400 87 50 97 0"
+lp_bin2 =  "686 1300 1400 87 50 97 0"
+lp_bin3 =  "686 1300 1400 87 50 97 0"
+lp_bin4 =  "686 1300 1400 87 50 97 0"
+lp_bin5 =  "686 1300 1400 87 50 97 0"
+lp_bin6 =  "686 1300 1400 87 50 97 0"
+lp_bin9 =  "686 1330 1400 87 50 97 0"
+lp_bin10 = "686 1330 1400 87 50 97 0"
+lp_bin11 = "686 1330 1400 87 50 97 0"
+lp_bin12 = "686 1360 1400 87 50 97 0"
+lp_bin13 = "686 1360 1400 87 50 97 0"
+lp_bin14 = "686 1360 1400 87 50 97 0"
+lp_bin15 = "686 1360 1400 87 50 97 0"
+lp_bin16 = "686 1360 1400 87 50 97 0"
+lp_bin17 = "686 1360 1400 87 50 97 0"

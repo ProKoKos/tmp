@@ -1,0 +1,11 @@
+
+config pools 'default'
+	option coin_type 'BTC/BCH/BSV'
+	option pool_strategy 'FAILOVER'
+	option pool1url 'stratum+tcp://btc.viabtc.io:443'
+	option pool1user 'tashiggy.7x0x5'
+	option pool1pw '123'
+	option pool2url 'stratum+tcp://btc.viabtc.io:25'
+	option pool2user 'tashiggy.7x0x5'
+	option pool2pw '123'
+

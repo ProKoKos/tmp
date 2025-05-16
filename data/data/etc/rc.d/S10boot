@@ -1,0 +1,128 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006-2011 OpenWrt.org
+
+START=10
+STOP=98
+
+source /usr/bin/utils.sh
+
+mac_init() {
+	# Restore MAC address if upgrading from old kernel
+	if [ -f /etc/mac ]; then
+		mac_detected_in_sst=`cat /proc/cmdline | grep mac_addr=c`
+		if [ "$mac_detected_in_sst" = "" ]; then
+			mac0=`cat /etc/mac`
+			/usr/bin/securezone -w mac $mac0
+			ifconfig eth0 hw ether $mac0
+		fi
+		rm /etc/mac
+	fi
+
+	# Read MAC from nand for card boot
+	card_boot=`cat /proc/cmdline | grep mmcblk`
+	if [ "$card_boot" != "" ]; then
+		mac0=`/usr/bin/securezone -r mac`
+		mac0=${mac0##*mac = }
+		if [ "$mac0" != "" ]; then
+			ifconfig eth0 hw ether $mac0
+			echo "set eth0 mac to "$mac0 > /dev/kmsg
+		fi
+	fi
+}
+
+antivirus_init() {
+	if [ -f /antiv/signature_full ] && [ -f /antiv/dig/pf_full.dig ]; then
+			return
+	fi
+	mount -o remount,rw /dev/root /
+
+	# Restore signature_full to active antivirus
+	if [ -f /antiv/signature_full.bak ]; then
+		mv /antiv/signature_full.bak /antiv/signature_full
+	fi
+
+	# Make sure to have full signature and digest files
+	if [ ! -f /antiv/signature_full ]; then
+		cp -fp /antiv/signature_partial /antiv/signature_full
+	fi
+	if [ ! -f /antiv/dig/pf_full.dig ]; then
+		cp -fp /antiv/dig/pf_partial.dig /antiv/dig/pf_full.dig
+	fi
+	
+	mount -o remount,ro /dev/root /
+}
+
+# Operation after last upgrading
+post_upgrade() {
+	antivirus_init
+	mac_init
+}
+
+prepare_log_partition() {
+    local dev="/dev/by-name/reserved"
+	mkdir -p /data/logs/
+
+	if [ "${is_allwinner}" = "" ]; then
+		return
+	fi
+
+	e2fsck -y $dev
+	mount -o data=journal -t ext4 $dev /data/logs
+	if [ "$?" != "0" ]; then
+		rm -rf /data/logs/*
+		mke2fs -t ext4 -j -F $dev
+		mount -o data=journal -t ext4 $dev /data/logs
+	fi
+}
+
+recovery_kernel_if_needed() {
+	if [ "${is_allwinner}" = "" ]; then
+		return
+	fi
+
+	boot_from_recovery=`cat /proc/cmdline | grep boot_part=recovery`
+	if [ "$boot_from_recovery" != "" ]; then
+		cat /root/kernel.fex > /dev/by-name/boot
+	fi
+}
+
+boot() {
+	[ -f /proc/mounts ] || /sbin/mount_root
+	[ -f /proc/jffs2_bbc ] && echo "S" > /proc/jffs2_bbc
+	[ -f /proc/net/vlan/config ] && vconfig set_name_type DEV_PLUS_VID_NO_PAD
+
+	link_dev_by_name
+	mkdir -p /var/run
+	mkdir -p /var/log
+	mkdir -p /var/lock
+	mkdir -p /var/state
+	mkdir -p /var/tmp
+	mkdir -p /tmp/.uci
+	chmod 0700 /tmp/.uci
+	touch /var/log/wtmp
+	touch /var/log/lastlog
+	touch /tmp/resolv.conf.auto
+	ln -sf /tmp/resolv.conf.auto /tmp/resolv.conf
+	grep -q debugfs /proc/filesystems && /bin/mount -o noatime -t debugfs debugfs /sys/kernel/debug
+	[ "$FAILSAFE" = "true" ] && touch /tmp/.failsafe
+
+	chmod 775 /tmp/
+
+	# temporary hack until configd exists
+	/sbin/reload_config
+
+	# create /dev/root if it doesn't exist
+	[ -e /dev/root -o -h /dev/root ] || {
+		rootdev=$(awk 'BEGIN { RS=" "; FS="="; } $1 == "root" { print $2 }' < /proc/cmdline)
+		[ -n "$rootdev" ] && ln -s "$rootdev" /dev/root
+	}
+
+	# bitmicro init
+	post_upgrade
+
+	recovery_kernel_if_needed
+	prepare_log_partition
+
+	/usr/bin/ipfilter
+	/bin/date -s 1970-01-02
+}

@@ -1,0 +1,11 @@
+
+config miner_setting 'web'
+	option pools_switch '1'
+
+# For action time randomizing for large number of miners
+config miner_setting 'time_randomized'
+	option start_net_max_delay_seconds '0'
+	option stop_mining_max_delay_seconds '0'
+
+config miner_setting 'admin_api_switch'
+	option admin_api_switch '0'

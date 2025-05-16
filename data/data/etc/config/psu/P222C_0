@@ -1,0 +1,18 @@
+[common]
+name = "P222C"
+has_pin = 1
+has_iin = 1
+has_iout = 1
+voltage_min = 1100
+voltage_limit = 1500
+voltage_max = 1550
+voltage_step = 1
+voltage_boot = 1350
+voltage_boot_high = 1450 
+power_limit = 3600
+power_max = 3800
+iout_limit = 295.0
+iout_max = 305.0
+iin_limit = 16.8
+iin_max = 17.6
+efficiency = 0.95

@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Usages:
+#
+# 1. test-readchipid [slot]
+#
+
+/usr/bin/miner-config-init.sh
+/bin/ft-readchipid 

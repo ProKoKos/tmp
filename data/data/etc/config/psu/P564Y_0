@@ -1,0 +1,21 @@
+[common]
+name = "P564Y"
+has_pin = 1
+has_iin = 1
+has_iout = 1
+phases = 3
+voltage_min = 3150
+voltage_limit = 4700
+voltage_max = 4700
+voltage_step = 3
+voltage_boot = 4000
+voltage_boot_high = 4400 
+power_limit = 7700
+power_limit_hp = 9600
+power_max = 10000
+iout_limit = 290.0
+iout_max = 300.0
+iin_limit = 16
+iin_max = 16.8
+vin_max = 295
+efficiency = 0.96

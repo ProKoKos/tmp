@@ -1,0 +1,30 @@
+[common]
+platform = "H616"
+name = "CB6"
+version = 7
+has_env_temp = 1
+has_env_humidity = 0
+
+[gpio]
+led_red = 257
+led_green = 258
+key_ip = 234
+key_reset = 233
+watchdog_feed = -1
+io_power_en = 263
+
+[gpio_board4]
+has_plug_pin = 0
+board_plug0 = -1
+board_plug1 = -1
+board_plug2 = -1
+board_plug3 = -1
+board_reset0 = 201
+board_reset1 = -1
+board_reset2 = 202
+board_reset3 = -1
+board_reset_detect0 = 193
+board_reset_detect1 = -1
+board_reset_detect2 = 194
+board_reset_detect3 = -1
+

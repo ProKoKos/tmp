@@ -1,0 +1,22 @@
+[common]
+
+board_temp_protect = 83
+
+[power_P30A]
+power_limit = 7000
+voltage_boot = 2700
+config = "config"
+
+;xxx = "freq voltage_target voltage_limit chip_temp board_temp ok_core_pct min_power"
+[config]
+bin1 =   "555 2500 2800 87 75 97 0000 0"  
+bin2 =   "555 2500 2800 87 75 97 0000 0"  
+bin3 =   "555 2500 2800 87 75 97 0000 0"  
+bin4 =   "555 2500 2800 87 75 97 0000 0"  
+bin5 =   "555 2500 2800 87 75 97 0000 0"  
+
+lp_bin1 =   "410 2500 2800 87 75 97 0000 0"  
+lp_bin2 =   "410 2500 2800 87 75 97 0000 0"  
+lp_bin3 =   "410 2500 2800 87 75 97 0000 0"  
+lp_bin4 =   "410 2500 2800 87 75 97 0000 0"  
+lp_bin5 =   "410 2500 2800 87 75 97 0000 0"  

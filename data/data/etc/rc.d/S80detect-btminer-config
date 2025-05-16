@@ -1,0 +1,43 @@
+#!/bin/sh /etc/rc.common
+
+START=80
+STOP=20
+
+# Disable serial console for 4 boards as the fouth board uses debug uart
+disable_serial_console_for_4boards() {
+    board_num=`uci get btminer.default.board_num`
+    if [ "$board_num" -lt 4 ]; then
+        return
+    fi
+
+    conloglevel=`uci get system.@system[0].conloglevel`
+    if [ "$conloglevel" -eq 1 ]; then
+        return
+    fi
+
+    uci set system.@system[0].conloglevel=1
+    uci set system.@system[0].kconloglevel=1
+    uci commit system
+    /etc/init.d/system restart
+    sed -i "s/ttyS0/#ttyS0/" /etc/inittab
+    logger "Reboot for disable uart console"
+    reboot
+}
+
+start() {
+    force_miner_type=$1
+
+    platform_common_init
+
+    source /usr/bin/miner-config-init.sh
+    if [ "$miner_type" = "unknown" ]; then
+        exit 1;
+    fi
+
+    disable_serial_console_for_4boards
+
+    # Detect eeprom again for H6os, as the relation between slot and device is different for 3&4 boards miners
+    /usr/bin/detect-eeprom-data
+    source /usr/bin/detect-platform.sh
+    platform_board_init
+}

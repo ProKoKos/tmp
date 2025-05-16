@@ -1,0 +1,13 @@
+
+config pools 'default'
+	option coin_type 'DCR'
+	option pool1user 'DsiGN4GEzJA35kht7SzqSvncz4z1J3y6Gck.microbt'
+	option pool1pw '1234'
+	option pool1url 'stratum+tcp://dcr-pool.beepool.org:9568'
+	option pool2user 'microbt1.microbt'
+	option pool2pw '1234'
+	option pool2url 'stratum+tcp://dcr.ss.poolin.com:443'
+	option pool3user 'DsiGN4GEzJA35kht7SzqSvncz4z1J3y6Gck.microbt'
+	option pool3pw '1234'
+	option pool3url 'stratum+tcp://dcr.f2pool.com:5730'
+

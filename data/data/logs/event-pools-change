@@ -1,0 +1,8 @@
+Wed Dec 20 21:33:20 2023|E013|Pools Change|btminer|change pool[1] url from 'Empty' to 'stratum+tcp://btc.viabtc.io:443'
+Wed Dec 20 21:33:20 2023|E013|Pools Change|btminer|change pool[1] user from 'Empty' to 'tashiggy.7x0x5'
+Wed Dec 20 21:33:20 2023|E013|Pools Change|btminer|change pool[2] url from 'Empty' to 'stratum+tcp://btc.viabtc.io:25'
+Wed Dec 20 21:33:23 2023|E013|Pools Change|btminer|change pool[1] url from 'Empty' to 'stratum+tcp://btc.viabtc.io:443'
+Wed Dec 20 21:33:23 2023|E013|Pools Change|btminer|change pool[1] user from 'Empty' to 'tashiggy.7x0x5'
+Wed Dec 20 21:33:23 2023|E013|Pools Change|btminer|change pool[2] user from 'Empty' to 'tashiggy.7x0x5'
+Wed Dec 20 21:33:27 2023|E013|Pools Change|btminer|change pool[1] url from 'Empty' to 'stratum+tcp://btc.viabtc.io:443'
+Wed Dec 20 21:33:27 2023|E013|Pools Change|btminer|change pool[2] url from 'Empty' to 'stratum+tcp://btc.viabtc.io:25'

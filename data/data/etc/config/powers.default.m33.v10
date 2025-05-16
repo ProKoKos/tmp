@@ -1,0 +1,33 @@
+[common]
+
+board_temp_protect = 75
+
+[power_P5]
+voltage_boot = 0
+voltage_boot_high = 0
+config = "config"
+
+[power_P5V2]
+voltage_boot = 20
+voltage_boot_high = 10
+config = "config"
+
+;xxx = "freq voltage_target voltage_limit board_temp chip_temp"
+[config]
+bin1 =      "1030 40 20 95 72 99 0"
+bin2 =      "972 40 20 95 72 99 0"
+bin3 =      "932 40 20 95 72 99 0"
+bin4 =      "908 40 20 95 72 99 0"
+bin5 =      "890 40 20 95 72 99 0"
+bin6 =      "876 40 20 95 72 99 0"
+
+bin9 =      "720 30 0 95 72 99 0"
+bin10 =     "720 30 0 95 72 99 0"
+bin11 =     "720 30 0 95 72 97 0"
+bin12 =     "720 30 0 95 72 97 0"
+bin13 =     "720 30 0 95 72 97 0"
+bin14 =     "720 20 0 95 72 97 0"
+bin15 =     "720 20 0 95 72 97 0"
+bin16 =     "720 20 0 95 72 97 0"
+bin17 =     "720 20 0 95 72 97 0"
+bin18 =     "720 20 0 95 72 97 0"

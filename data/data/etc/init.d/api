@@ -1,0 +1,64 @@
+#!/bin/sh /etc/rc.common
+
+source /usr/bin/utils.sh
+
+START=90
+
+APP=api
+APP_V2=api-v2
+PIDFILE=/var/run/$APP.pid
+PIDFILE2=/var/run/$APP_V2.pid
+
+ERROR_CODE=803
+
+start_service() {
+	if [ -f /usr/bin/api ]; then
+	    etc_checksum=`cat /etc/microbt_release | grep API_MD5`
+	    if [ "${etc_checksum}" != "" ];then
+		verify_checksum $APP
+		if [ $? = 1 ]; then
+		    remove_error_code $ERROR_CODE
+		else
+		    generate_error_code $APP $ERROR_CODE "checksum error"
+		fi
+		start-stop-daemon -S -x $APP -p $PIDFILE -m -b
+	    fi
+	fi
+    
+	if [ -f /usr/bin/api-v2 ]; then
+	    etc_checksum=`cat /etc/microbt_release | grep API_V2_MD5`
+	    if [ "${etc_checksum}" != "" ];then
+		verify_checksum $APP_V2
+		if [ $? = 1 ]; then
+		    remove_error_code $ERROR_CODE
+		else
+		    generate_error_code $APP_V2 $ERROR_CODE "checksum error"
+		fi
+		start-stop-daemon -S -x $APP_V2 -p $PIDFILE2 -m -b
+	    fi
+	fi
+}
+
+stop_service() {
+if [ -f /usr/bin/api-v2 ]; then
+    killall -9 api-v2 > /dev/null
+fi
+
+if [ -f /usr/bin/api ]; then
+    killall -9 api > /dev/null
+fi    
+}
+
+start() {
+	start_service
+}
+
+stop() {
+	stop_service
+}
+
+restart() {
+    log "$1"
+    stop
+    start
+}

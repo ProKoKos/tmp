@@ -1,0 +1,29 @@
+[common]
+platform = "H3"
+name = "CB2"
+version = -1
+has_env_temp = 0
+has_env_humidity = 0
+
+[gpio]
+led_red = 102
+led_green = 103
+key_ip = 10
+key_reset = 9
+watchdog_feed = 363
+io_power_en = -1
+
+[gpio_board3]
+board_plug0 = 15
+board_plug1 = 7
+board_plug2 = 8
+board_plug3 = -1
+board_reset0 = 99
+board_reset1 = 100
+board_reset2 = 101
+board_reset3 = -1
+board_reset_detect0 = 96
+board_reset_detect1 = 97
+board_reset_detect2 = 98
+board_reset_detect3 = -1
+

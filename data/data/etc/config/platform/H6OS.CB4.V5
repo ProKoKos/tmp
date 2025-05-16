@@ -1,0 +1,30 @@
+[common]
+platform = "H6OS"
+name = "CB4"
+version = 5
+has_env_temp = 1
+has_env_humidity = 0
+
+[gpio]
+led_red = 385
+led_green = 387
+key_ip = 232
+key_reset = 233
+watchdog_feed = -1
+io_power_en = 356
+
+[gpio_board4]
+has_plug_pin = 0
+board_plug0 = -1
+board_plug1 = -1
+board_plug2 = -1
+board_plug3 = -1
+board_reset0 = 197
+board_reset1 = -1
+board_reset2 = 202
+board_reset3 = -1
+board_reset_detect0 = 110
+board_reset_detect1 = -1
+board_reset_detect2 = 111
+board_reset_detect3 = -1
+

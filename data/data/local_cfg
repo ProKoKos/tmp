@@ -1,0 +1,15 @@
+
+[90]
+voltage_target = 1252
+freq     = 604
+freq_target = 540
+hash     = 127155888
+env_temp = 8
+hsel0    = 0
+msel0    = 0
+hsel1    = 0
+msel1    = 0
+hsel2    = 0
+msel2    = 0
+
+

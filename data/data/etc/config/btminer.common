@@ -1,0 +1,15 @@
+
+config btminer 'default'
+	option miner_type 'Sorting'
+	option chip_id '0x1978'
+	option asicboost '1'
+	option baud_rate	'12000000'
+	option board_num	'3'
+	option chip_num		'1'
+	option chip_column_num '1'
+	option pre_heat_temp '25'
+	option pre_heat_end_freq '192'
+	option pre_heat_timeout '300'
+
+config factory_test 'factory_test'
+	option cool_temp       '38'

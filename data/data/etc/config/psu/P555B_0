@@ -1,0 +1,20 @@
+[common]
+name = "P555B"
+has_pin = 1
+has_iin = 1
+has_iout = 1
+phases = 3
+voltage_min = 4300
+voltage_limit = 5600
+voltage_max = 5600
+voltage_step = 4
+voltage_boot = 5200
+voltage_boot_high = 5200 
+power_limit = 7700
+power_limit_hp = 9600
+power_max = 10000
+iout_limit = 230.0
+iout_max = 240.0
+iin_limit = 16
+iin_max = 16.8
+efficiency = 0.96

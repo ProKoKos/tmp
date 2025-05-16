@@ -1,0 +1,21 @@
+[common]
+
+board_temp_protect = 85
+
+[power_P21E]
+config = "config"
+
+[power_PXX2X]
+config = "config"
+
+[power_PXX2X]
+config = "config"
+
+;xxx = "freq voltage_target voltage_limit chip_temp board_temp ok_core_pct min_power"
+[config]
+bin1 =      "406 1360 9999 -1 80 97 0000 32.0"
+bin2 =      "406 1380 9999 -1 80 97 0000 32.0"
+bin3 =      "406 1400 9999 -1 80 97 0000 32.0"
+bin4 =      "406 1400 9999 -1 80 97 0000 32.0"
+bin5 =      "406 1400 9999 -1 80 97 0000 32.0"
+bin6 =      "406 1400 9999 -1 80 97 0000 32.0"

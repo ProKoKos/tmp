@@ -1,0 +1,43 @@
+[common]
+platform = "H6OS"
+name = "CB5"
+version = 10
+has_env_temp = 1
+has_env_humidity = 0
+
+[gpio]
+led_red = 385
+led_green = 387
+key_ip = 232
+key_reset = 233
+watchdog_feed = 206
+io_power_en = -1
+
+[gpio_board3]
+board_plug0 = 196
+board_plug1 = 201
+board_plug2 = 226
+board_plug3 = -1
+board_reset0 = 197
+board_reset1 = 202
+board_reset2 = 194
+board_reset3 = -1
+board_reset_detect0 = 110
+board_reset_detect1 = 111
+board_reset_detect2 = 112
+board_reset_detect3 = -1
+
+[gpio_board4]
+board_plug0 = 196
+board_plug1 = 234
+board_plug2 = 201
+board_plug3 = 226
+board_reset0 = 197
+board_reset1 = 193
+board_reset2 = 202
+board_reset3 = 194
+board_reset_detect0 = 110
+board_reset_detect1 = 105
+board_reset_detect2 = 111
+board_reset_detect3 = 112
+

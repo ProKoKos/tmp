@@ -1,0 +1,28 @@
+[common]
+
+board_temp_protect = 85
+
+[power_P21E]
+power_limit = 3600
+voltage_boot = 1500
+voltage_upfreq_step1 = 1500
+config = "config"
+
+[power_PXX2X]
+config = "config"
+
+;xxx = "freq voltage_target voltage_limit chip_temp board_temp ok_core_pct min_power"
+[config]
+bin1 =      "383 1380 1500 87 80 97 0 35.0"
+bin2 =      "383 1390 1500 87 80 97 0 35.0"
+bin3 =      "383 1400 1500 87 80 97 0 35.0"
+bin4 =      "383 1410 1500 87 80 97 0 35.0"
+bin5 =      "383 1420 1500 87 80 97 0 35.0"
+bin6 =      "383 1430 1500 87 80 97 0 35.0"
+
+lp_bin1 =      "322 1340 1500 87 78 97 0 32.0"
+lp_bin2 =      "322 1350 1500 87 78 97 0 32.0"
+lp_bin3 =      "322 1360 1500 87 78 97 0 32.0"
+lp_bin4 =      "322 1370 1500 87 78 97 0 32.0"
+lp_bin5 =      "322 1380 1500 87 78 97 0 32.0"
+lp_bin6 =      "322 1390 1500 87 78 97 0 32.0"

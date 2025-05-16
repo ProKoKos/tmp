@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# Usages:
+#
+# ft-boardtest [slot]
+#
+
+if [ "$1" = "" ]; then
+    slot=-1
+else
+    slot=$1
+fi
+
+rm -rf /tmp/code/*
+
+/etc/init.d/detect-btminer-config start
+
+miner_type=`uci get btminer.default.miner_type`
+
+echo "-----------------------------------------------------------------"
+echo "Platform=$control_board_type Miner=$miner_type"
+
+if [ "$#" = 3 ]; then
+    preheat_temp=$2
+    target_freq=$3
+    echo "preheat_temp=$preheat_temp target_freq=$target_freq"
+fi
+echo "-----------------------------------------------------------------"
+
+
+#
+# Start to test, command usage:
+#
+btminer_test ft_board_test $slot $preheat_temp $target_freq
+
+exit $?
+

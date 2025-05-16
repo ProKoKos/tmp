@@ -1,0 +1,37 @@
+#!/bin/sh /etc/rc.common
+
+source /usr/bin/utils.sh
+
+START=90
+
+APP=system-monitor
+PIDFILE=/var/run/$APP.pid
+
+ERROR_CODE=801
+
+start() {
+    verify_checksum $APP
+    if [ $? = 1 ]; then
+        remove_error_code $ERROR_CODE
+    else
+        generate_error_code $APP $ERROR_CODE "checksum error"
+    fi
+    start-stop-daemon -S -x $APP -p $PIDFILE -m -b
+
+    watchdog_running=`pidof watchdog`
+    if [ -f /usr/bin/watchdog ] && [ "$watchdog_running" = "" ]; then
+        /usr/bin/watchdog &
+    fi
+}
+
+stop() {
+    if pidof $APP > /dev/null; then  
+        killall -9 $APP > /dev/null  
+        rm -rf $PIDFILE  
+    fi
+}
+
+restart() {
+    stop
+    start
+}

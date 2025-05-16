@@ -1,0 +1,9 @@
+[common]
+
+board_temp_protect = 115
+
+[power_P0]
+config = "config"
+
+[config]
+bin1 =      "600 1200 1400 95 70 99 0"

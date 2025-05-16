@@ -1,0 +1,40 @@
+[common]
+power_mode = 1
+
+board_temp_protect = 85
+use_chip_temp = 0
+
+[power_P21E]
+power_limit = 3600
+voltage_boot = 1450
+voltage_upfreq_step1 = 1350
+config = "config"
+
+[power_P222B]
+config = "config"
+
+[power_P222C]
+power_limit = 3600
+voltage_boot = 1450
+voltage_upfreq_step1 = 1400
+config = "config"
+
+;xxx = "freq voltage_target voltage_limit chip_temp board_temp ok_core_pct min_power"
+[config]
+
+bin1v1_D  =  "420 1300 1430 87 80 97 0000 35.0"
+
+bin1 =      "418 1300 1430 87 80 97 0 35.0"
+bin2 =      "418 1300 1430 87 80 97 0 35.0"
+bin3 =      "418 1300 1430 87 80 97 0 35.0"
+bin4 =      "418 1300 1430 87 80 97 0 35.0"
+bin5 =      "418 1300 1430 87 80 97 0 35.0"
+bin6 =      "418 1300 1430 87 80 97 0 35.0"
+
+lp_bin1v1_D  =  "336 1260 1430 87 78 97 0000 32.0"
+lp_bin1 =      "336 1260 1430 87 78 97 0 32.0"
+lp_bin2 =      "336 1260 1430 87 78 97 0 32.0"
+lp_bin3 =      "336 1260 1430 87 78 97 0 32.0"
+lp_bin4 =      "336 1260 1430 87 78 97 0 32.0"
+lp_bin5 =      "336 1260 1430 87 78 97 0 32.0"
+lp_bin6 =      "336 1260 1430 87 78 97 0 32.0"

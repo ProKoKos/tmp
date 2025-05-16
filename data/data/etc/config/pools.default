@@ -1,0 +1,7 @@
+
+config pools 'default'
+	option coin_type 'BTC'
+	option pool_strategy 'FAILOVER'
+	option pool1url ''
+	option pool1user ''
+	option pool1pw ''

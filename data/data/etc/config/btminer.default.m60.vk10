@@ -1,0 +1,13 @@
+
+config btminer 'default'
+	option miner_type 'M60VK10'
+	option chip_id '0x1978'
+	option baud_rate	'12000000'
+	option board_num	'3'
+	option chip_num		'180'
+	option chip_column_num '4'
+	option cool_temp     '35'
+	option pre_heat_temp '25'
+	option pre_heat_end_freq '210'
+	option pre_heat_timeout '300'
+	option fan_size_cm   '14'

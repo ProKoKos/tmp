@@ -1,0 +1,58 @@
+#!/bin/sh
+#
+# Usages:
+#
+# 1. test-readchipid [slot] [chip_num]
+#
+
+
+# Check parameters: <command> [device]
+
+case $# in
+    0)
+    slot=-1
+    ;;
+
+    1)
+    slot=$1
+    ;;
+
+    2)
+    slot=$1
+    chip_num=$2
+    ;;
+esac
+
+rm -rf /tmp/code/*
+
+/etc/init.d/detect-btminer-config start
+
+miner_type=`uci get btminer.default.miner_type`
+baud=`uci get btminer.default.baud_rate`
+
+if [ "$chip_num" = "" ]; then
+    chip_num=`uci get btminer.default.chip_num`
+fi
+
+echo "-----------------------------------------------------------------"
+echo "Platform=$control_board_type Miner=$miner_type"
+echo "slot=$slot BAUD=$baud CHIP_NUM=$chip_num"
+echo "-----------------------------------------------------------------"
+
+#
+# Start to test, command usage:
+#
+# 
+factory_step_file='/etc/factory_test_step'
+current_step=`cat $factory_step_file`
+
+btminer_test ft_probe $slot
+ret=$?
+slot=`ini get /tmp/factory-test-result Summary Slot`
+if [ "$ret" == "0" ]; then
+    write-eeprom-data -s $slot -factory $current_step 1
+else
+    write-eeprom-data -s $slot -factory $current_step 0
+fi
+
+exit $?

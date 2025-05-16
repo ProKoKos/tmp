@@ -1,0 +1,21 @@
+
+[common]
+name     = P221B
+has_pin  = 1
+has_iin  = 1
+has_iout = 1
+voltage_min = 1252
+voltage_limit = 1400
+voltage_max = 1500
+voltage_step = 1
+voltage_boot = 1300
+voltage_boot_high = 1400
+power_limit = 3700
+power_max = 3850
+iout_limit = 327.0
+iout_max = 334.0
+iin_limit = 18.6
+iin_max  = 18.8
+efficiency = 0.96
+
+

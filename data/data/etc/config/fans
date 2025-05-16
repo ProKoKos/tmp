@@ -1,0 +1,14 @@
+config common 'common'
+    option count	'2'
+
+config fan 'fan0'
+    list 'speed_node' 	'0:30'
+    list 'speed_node' 	'10:600'
+    list 'speed_node' 	'100:6800'
+    option speed_vs_freq_times '30'
+
+config fan 'fan1'
+    list 'speed_node' 	'0:30'
+    list 'speed_node' 	'10:600'
+    list 'speed_node' 	'100:6800'
+    option speed_vs_freq_times '30'

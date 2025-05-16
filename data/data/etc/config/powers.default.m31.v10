@@ -1,0 +1,38 @@
+[common]
+
+board_temp_protect = 78
+
+[power_P21]
+power_limit = 3500
+voltage_boot = 1400
+config = "config"
+
+[power_P21D]
+power_limit = 3600
+voltage_boot = 1400
+config = "config"
+
+[power_PXX1X]
+config = "config"
+
+[power_PXX1X]
+power_limit = 3600
+voltage_boot = 1300
+voltage_boot_high = 1350
+config = "config"
+
+;xxx = "freq voltage_target voltage_limit chip_temp board_temp"
+[config]
+bin1 =      "920 1260 1400 87 72 97 0000 49.0"
+bin2 =      "920 1260 1400 87 72 97 0000 49.0"
+bin3 =      "910 1260 1400 87 72 97 0000 49.0"
+bin4 =      "884 1260 1400 87 72 97 0000 49.0"
+bin5 =      "860 1260 1400 87 72 97 0000 49.0"
+bin6 =      "860 1260 1400 87 72 97 0000 49.0"
+
+lp_bin1 =      "920 1260 1400 87 72 97 0000 49.0"
+lp_bin2 =      "920 1260 1400 87 72 97 0000 49.0"
+lp_bin3 =      "910 1260 1400 87 72 97 0000 49.0"
+lp_bin4 =      "884 1260 1400 87 72 97 0000 49.0"
+lp_bin5 =      "860 1260 1400 87 72 97 0000 49.0"
+lp_bin6 =      "860 1260 1400 87 72 97 0000 49.0"

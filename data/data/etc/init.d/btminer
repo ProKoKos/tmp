@@ -1,0 +1,36 @@
+#!/bin/sh /etc/rc.common
+
+source /usr/bin/utils.sh
+
+START=99
+
+APP=btminer
+PID_FILE=/var/run/$APP.pid
+
+ERROR_CODE=800
+
+start() {
+    verify_checksum $APP
+    if [ $? = 1 ]; then
+        remove_error_code $ERROR_CODE
+        echo 2 > /sys/bitmicro/keepalive/enable
+        start-stop-daemon -S -x $APP -p $PID_FILE -m -b -- $PARAMS
+    else
+        generate_error_code $APP $ERROR_CODE "checksum error"
+    fi
+}
+
+stop() {
+    max_delay=`uci get miner_setting.time_randomized.stop_mining_max_delay_seconds 2>/dev/null`
+    if [ "$max_delay" != "" ]; then
+        delay=`awk 'BEGIN{srand();print int('$max_delay'*rand())}'`
+    fi
+    if [ "$delay" != "" ] && [ "$delay" -gt 0 ]; then
+        logger "Sleep $delay seconds for randomized stopping mining"
+        sleep $delay
+    fi
+
+    echo 1 > /sys/bitmicro/keepalive/enable
+    start-stop-daemon -K -n $APP -p $PID_FILE -s TERM
+    sleep 2
+}

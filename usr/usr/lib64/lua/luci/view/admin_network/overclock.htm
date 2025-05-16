@@ -1,0 +1,53 @@
+<%+cbi/valueheader%>
+
+<style>
+  #hidden_script_m {
+    display: none;
+  }
+</style>
+
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const profiles_list = form.querySelector(".cbi-input-select");
+    const checkboxArray = Array.from(form.querySelectorAll(".cbi-input-checkbox"));
+    const inputArray = Array.from(form.querySelectorAll(".cbi-input-text"));
+
+    const getShortName = el => (el.id || el.name).split('.').pop();
+
+    checkboxArray.forEach(el => el.short_name = getShortName(el));
+    inputArray.forEach(el => el.short_name = getShortName(el));
+	
+	var profiles = JSON.parse('<%=self._profiles%>');
+	var profile_0 = {};
+    
+	checkboxArray.forEach(el => {
+      profile_0[el.short_name] = el.checked ? '1' : '0';
+    });
+    inputArray.forEach(el => {
+      profile_0[el.short_name] = el.value;
+    });
+    profile_0["name"] = "Default";
+    profiles["profile_0"] = profile_0;
+	
+	profiles_list.addEventListener("change", function() {
+		var selectedIndex = profiles_list.selectedIndex;
+		var selectedProfile = profiles["profile_" + selectedIndex];
+		console.log(selectedProfile);
+	  
+		checkboxArray.forEach(el => {
+			el.checked = selectedProfile[el.short_name] === '1';
+		});
+
+		inputArray.forEach(el => {
+			el.value = selectedProfile[el.short_name];
+			if (selectedIndex === 0 && el.short_name === "name") {
+				el.value = "";
+			}
+		});
+	  
+    });
+});
+</script>
+
+<%+cbi/valuefooter%>

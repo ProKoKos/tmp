@@ -1,0 +1,49 @@
+[common]
+
+board_temp_protect = 83
+
+[power_P21E]
+power_limit = 3600
+voltage_boot = 1480
+voltage_upfreq_step1 = 1480
+config = "config"
+
+[power_PXX2X]
+config = "config"
+
+[power_PXX2X]
+power_limit = 3600
+voltage_boot = 1450
+voltage_upfreq_step1 = 1400
+config = "config"
+
+;xxx = "freq voltage_target voltage_limit chip_temp board_temp ok_core_pct min_power"
+[config]
+bin1 =      "368 1460 1500 87 80 97 0000 35.0"
+bin2 =      "368 1460 1500 87 80 97 0000 35.0"
+bin3 =      "368 1470 1500 87 80 97 0000 35.0"
+bin4 =      "368 1470 1500 87 80 97 0000 35.0"
+bin5 =      "368 1480 1500 87 80 97 0000 35.0"
+bin6 =      "368 1480 1500 87 80 97 0000 35.0"
+
+bin1v1_A =   "368 1460 1500 87 80 97 0000 35.0"
+bin1v1_B =   "368 1460 1500 87 80 97 0000 35.0"
+bin1v1_C =   "368 1460 1500 87 80 97 0000 35.0"
+bin1v1_D =   "368 1460 1500 87 78 97 0000 35.0"
+
+lp_bin1_A =   "322 1408 1500 87 78 97 0"
+lp_bin1_B =   "322 1408 1500 87 78 97 0"
+lp_bin1_C =   "322 1408 1500 87 78 97 0"
+lp_bin1_D =   "322 1408 1500 87 76 97 0"
+
+hp_bin1_A =   "406 1476 1500 87 80 97 0"
+hp_bin1_B =   "406 1476 1500 87 80 97 0"
+hp_bin1_C =   "406 1476 1500 87 80 97 0"
+hp_bin1_D =   "406 1476 1500 87 80 97 0"
+
+lp_bin1 =   "322 1420 1500 87 78 97 0 32.0"
+lp_bin2 =   "322 1420 1500 87 78 97 0 32.0"
+lp_bin3 =   "322 1430 1500 87 78 97 0 32.0"
+lp_bin4 =   "322 1430 1500 87 78 97 0 32.0"
+lp_bin5 =   "322 1440 1500 87 78 97 0 32.0"
+lp_bin6 =   "322 1440 1500 87 78 97 0 32.0"

@@ -1,0 +1,29 @@
+[common]
+platform = "ZYNQ"
+name = ""
+version = 10
+has_env_temp = 0
+has_env_humidity = 0
+
+[gpio]
+led_red = 943
+led_green = 944
+key_ip = 957
+key_reset = 953
+watchdog_feed = -1
+io_power_en = -1
+
+[gpio_board3]
+board_plug0 = 960
+board_plug1 = 962
+board_plug2 = 964
+board_plug3 = -1
+board_reset0 = 961
+board_reset1 = 963
+board_reset2 = 965
+board_reset3 = -1
+board_reset_detect0 = 941
+board_reset_detect1 = 940
+board_reset_detect2 = 939
+board_reset_detect3 = -1
+
